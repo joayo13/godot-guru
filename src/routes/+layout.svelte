@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { fade, slide } from 'svelte/transition'
+	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	let isMobile = false;
 	let menuOpen = false;
@@ -53,18 +53,21 @@
 	<p>{`isMobile: ${isMobile}`}</p>
 	{#if menuOpen}
 		<div
-			class='overlay'
+			class="overlay"
 			on:click={handleOverlayClick}
 			role="presentation"
-			transition:fade={{ delay: 250, duration: 300, easing: quintOut}}
+			transition:fade={{ delay: 250, duration: 300, easing: quintOut }}
 		></div>
-		<nav class='menu' aria-hidden={!menuOpen} transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}>
+		<nav
+			class="menu"
+			aria-hidden={!menuOpen}
+			transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
+		>
 			<a href="#home">Home</a>
 			<a href="#about">About</a>
 			<a href="#services">Services</a>
 		</nav>
 	{/if}
-	
 </nav>
 
 <slot></slot>
