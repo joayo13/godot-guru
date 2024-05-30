@@ -7,6 +7,12 @@
 
 	function toggleMenu() {
 		menuOpen = !menuOpen;
+		if (menuOpen === true) {
+			document.addEventListener('keydown', handleKeydown);
+		}
+		else {
+			document.removeEventListener('keydown', handleKeydown);
+		}
 	}
 
 	function handleKeydown(event: KeyboardEvent) {
@@ -25,30 +31,20 @@
 	onMount(() => {
 		checkMobile();
 		window.addEventListener('resize', checkMobile);
-		//Listen for escape key when if mobile menu is open
-		if (typeof document !== 'undefined') {
-			if (menuOpen) {
-				document.body.style.overflow = 'hidden';
-				document.addEventListener('keydown', handleKeydown);
-			} else {
-				document.body.style.overflow = 'auto';
-				document.removeEventListener('keydown', handleKeydown);
-			}
-		}
-
-		return () => {
-			window.removeEventListener('resize', checkMobile);
-		};
 	});
 </script>
 
-<nav class="navbar">
+<nav>
 	{#if isMobile}
-		<button on:click={toggleMenu}>Hamburger</button>
+		<button on:click={toggleMenu} aria-expanded={menuOpen} aria-controls="mobile-menu">
+			Hamburger
+		</button>
 	{:else}
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/settings">Settings</a>
+		<div role="navigation" aria-label="Main Navigation" class="main-nav">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
+			<a href="/settings">Settings</a>
+		</div>
 	{/if}
 	<p>{`isMobile: ${isMobile}`}</p>
 	{#if menuOpen}
@@ -58,22 +54,24 @@
 			role="presentation"
 			transition:fade={{ delay: 250, duration: 300, easing: quintOut }}
 		></div>
-		<nav
-			class="mobile-menu"
+		<div
+			class="main-nav-mobile"
+			role="navigation"
+			aria-label="Main Navigation"
 			aria-hidden={!menuOpen}
 			transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
 		>
 			<a href="#home">Home</a>
 			<a href="#about">About</a>
 			<a href="#services">Services</a>
-		</nav>
+		</div>
 	{/if}
 </nav>
 
 <slot></slot>
 
 <style>
-	.mobile-menu {
+	.main-nav-mobile {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -84,14 +82,14 @@
 		overflow-y: auto;
 	}
 
-	.mobile-menu a {
+	.main-nav-mobile a {
 		display: block;
 		padding: 1em;
 		color: white;
 		text-decoration: none;
 	}
 
-	.mobile-menu a:hover {
+	.main-nav-mobile a:hover {
 		background: #444;
 	}
 
