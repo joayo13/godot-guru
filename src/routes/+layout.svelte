@@ -42,7 +42,7 @@
 	});
 </script>
 
-<nav>
+<nav class="navbar">
 	{#if isMobile}
 		<button on:click={toggleMenu}>Hamburger</button>
 	{:else}
@@ -59,7 +59,7 @@
 			transition:fade={{ delay: 250, duration: 300, easing: quintOut }}
 		></div>
 		<nav
-			class="menu"
+			class="mobile-menu"
 			aria-hidden={!menuOpen}
 			transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
 		>
@@ -73,7 +73,7 @@
 <slot></slot>
 
 <style>
-	.menu {
+	.mobile-menu {
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -84,14 +84,14 @@
 		overflow-y: auto;
 	}
 
-	.menu a {
+	.mobile-menu a {
 		display: block;
 		padding: 1em;
 		color: white;
 		text-decoration: none;
 	}
 
-	.menu a:hover {
+	.mobile-menu a:hover {
 		background: #444;
 	}
 
