@@ -38,16 +38,27 @@
 
 <nav>
 	{#if is_mobile && nav_visible}
-		<div class="navbar-mobile" role="navigation" transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'y' }}>
+		<div class="navbar-mobile" role="navigation" transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}>
+			<div class="logo-container">
+				<img class="logo-image" src="logo-godot-guru.png" alt="logo">
+				<strong style="color: white;">GODOT GURU</strong>
+			</div>
 			<button on:click={toggleMenu} aria-expanded={menu_open} aria-controls="mobile-menu">
 				Hamburger
 			</button>
 		</div>
 	{:else if !is_mobile && nav_visible}
-		<div role="navigation" aria-label="Main Navigation" class="navbar-desktop" transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'y' }}>
-			<a href="/">Home</a>
-			<a href="/about">About</a>
-			<a href="/settings">Plans & Pricing</a>
+		<div role="navigation" aria-label="Main Navigation" class="navbar-desktop" transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}>
+			<div class="logo-container">
+				<img class="logo-image" src="logo-godot-guru.png" alt="logo">
+				<strong style="color: white;">GODOT GURU</strong>
+			</div>
+			
+			<div>
+				<a href="/about">About</a>
+				<a href="/contact">Contact</a>
+				<a href="/settings">Plans & Pricing</a>
+			</div>
 		</div>
 	{/if}
 	<p>{`isMobile: ${is_mobile}`}</p>
@@ -65,8 +76,8 @@
 			aria-hidden={!menu_open}
 			transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
 		>
-			<a href="#home">Home</a>
 			<a href="#about">About</a>
+			<a href="/contact">Contact</a>
 			<a href="#services">Plans & Pricing</a>
 		</div>
 	{/if}
@@ -75,16 +86,29 @@
 <slot></slot>
 
 <style>
+	.logo-image {
+		filter: invert();
+		height: 4rem;
+		width: 4rem;
+	}
+	.logo-container {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
 	.main-nav-mobile {
+		margin-top: 5rem;
+		font-family: 'Montserrat', sans-serif;
 		position: fixed;
 		top: 0;
-		left: 0;
+		right: 0;
 		height: 100%;
 		width: 250px;
 		background: #333;
 		color: white;
 		overflow-y: auto;
 		white-space: nowrap;
+		z-index: 2;
 	}
 
 	.main-nav-mobile a {
@@ -98,21 +122,40 @@
 		background: #444;
 	}
 	.navbar-mobile {
+		font-family: 'Montserrat', sans-serif;
 		background-color: #458dc0;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 5rem;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem;
+		box-sizing: border-box;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow */
+		z-index: 3;
 	}
 
 	.navbar-desktop {
+		font-family: 'Montserrat', sans-serif;
 		background-color: #458dc0;
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100%;
 		height: 5rem;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 2rem;
+		box-sizing: border-box;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	}
+	.navbar-desktop a {
+		color: white;
+		padding: 1rem;
 	}
 
 	.overlay {
@@ -123,5 +166,6 @@
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.5);
+		z-index: 1;
 	}
 </style>
