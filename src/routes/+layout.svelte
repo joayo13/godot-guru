@@ -100,6 +100,9 @@
 
 <style>
 	@import 'hamburgers/dist/hamburgers.css';
+	:global(body) {
+		margin: 0px;
+	}
 	.logo-image {
 		filter: invert();
 		height: 4rem;
@@ -118,7 +121,7 @@
 		right: 0;
 		height: 100%;
 		width: 250px;
-		background: #333;
+		background: #121f2b;
 		color: white;
 		overflow-y: auto;
 		white-space: nowrap;
@@ -130,10 +133,6 @@
 		padding: 1em;
 		color: white;
 		text-decoration: none;
-	}
-
-	.main-nav-mobile a:hover {
-		background: #444;
 	}
 	.navbar-mobile {
 		font-family: 'Montserrat', sans-serif;

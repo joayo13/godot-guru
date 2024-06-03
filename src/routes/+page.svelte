@@ -1,12 +1,31 @@
-<h1 style="margin-top: 5rem;">Godot Guru</h1>
-<h2>Go from beginner to master.</h2>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-<div class="red"></div>
+<main class="main">
+	<section>
+		<h2>Go from <strong class="beginner">beginner</strong> to <strong class="master">master</strong>.</h2>
+	</section>
+</main>
 
 <style>
-	.red {
-		background-color: red;
-		height: 100vh;
+	section {
+		padding: 1rem;
+	}
+	h2 {
+		font-size: 4rem;
+	}
+	p {
+		font-size: 1rem;
+	}
+	.main {
+		padding-top: 4rem;
+		font-family: 'Montserrat', sans-serif;
+		background-color: #121f2b;
+		color: white;
 		width: 100%;
+		height: 500px;
+	}
+	.beginner {
+		color: rgb(98, 212, 98);
+	}
+	.master {
+		color: rgb(211, 138, 138);
 	}
 </style>
