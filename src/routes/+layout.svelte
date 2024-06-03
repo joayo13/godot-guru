@@ -165,6 +165,7 @@
 		padding: 2rem;
 		box-sizing: border-box;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		z-index: 1;
 	}
 	.navbar-desktop a {
 		color: white;
