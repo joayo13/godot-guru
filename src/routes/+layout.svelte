@@ -44,7 +44,12 @@
 				<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 				<strong style="color: white;">GODOT GURU</strong>
 			</div>
-			<button class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`} on:click={toggleMenu} aria-expanded={menu_open} aria-controls="mobile-menu">
+			<button
+				class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
+				on:click={toggleMenu}
+				aria-expanded={menu_open}
+				aria-controls="mobile-menu"
+			>
 				<span class="hamburger-box">
 					<span class="hamburger-inner"></span>
 				</span>
@@ -95,11 +100,6 @@
 
 <style>
 	@import 'hamburgers/dist/hamburgers.css';
-
-	.hamburger {
-		color: white;
-	}
-
 	.logo-image {
 		filter: invert();
 		height: 4rem;
