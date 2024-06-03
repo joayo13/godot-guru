@@ -4,9 +4,9 @@
 <div class="red"></div>
 
 <style>
-    .red {
-        background-color: red;
-        height: 100vh;
-        width: 100%;
-    }
+	.red {
+		background-color: red;
+		height: 100vh;
+		width: 100%;
+	}
 </style>

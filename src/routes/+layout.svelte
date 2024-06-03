@@ -12,48 +12,56 @@
 	}
 
 	function handleOverlayClick() {
-		toggleMenu()
+		toggleMenu();
 	}
 	function checkMobile() {
 		is_mobile = window.matchMedia('(max-width: 768px)').matches;
 	}
 	function checkNavShouldBeVisible() {
 		if (window.scrollY > 200 && window.scrollY > prev_scrollY) {
-			nav_visible = false
+			nav_visible = false;
+		} else if (window.scrollY < prev_scrollY) {
+			nav_visible = true;
 		}
-		else if (window.scrollY < prev_scrollY) {
-
-      	nav_visible = true;
-    }
-    prev_scrollY = window.scrollY;
-  }
-
+		prev_scrollY = window.scrollY;
+	}
 
 	onMount(() => {
 		checkMobile();
 		window.addEventListener('resize', checkMobile);
-		window.addEventListener('scroll', checkNavShouldBeVisible)
+		window.addEventListener('scroll', checkNavShouldBeVisible);
 	});
 </script>
 
 <nav>
 	{#if is_mobile && nav_visible}
-		<div class="navbar-mobile" role="navigation" transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}>
+		<div
+			class="navbar-mobile"
+			role="navigation"
+			transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
+		>
 			<div class="logo-container">
-				<img class="logo-image" src="logo-godot-guru.png" alt="logo">
+				<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 				<strong style="color: white;">GODOT GURU</strong>
 			</div>
-			<button on:click={toggleMenu} aria-expanded={menu_open} aria-controls="mobile-menu">
-				Hamburger
+			<button class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`} on:click={toggleMenu} aria-expanded={menu_open} aria-controls="mobile-menu">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
 			</button>
 		</div>
 	{:else if !is_mobile && nav_visible}
-		<div role="navigation" aria-label="Main Navigation" class="navbar-desktop" transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}>
+		<div
+			role="navigation"
+			aria-label="Main Navigation"
+			class="navbar-desktop"
+			transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
+		>
 			<div class="logo-container">
-				<img class="logo-image" src="logo-godot-guru.png" alt="logo">
+				<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 				<strong style="color: white;">GODOT GURU</strong>
 			</div>
-			
+
 			<div>
 				<a href="/about">About</a>
 				<a href="/contact">Contact</a>
@@ -86,6 +94,12 @@
 <slot></slot>
 
 <style>
+	@import 'hamburgers/dist/hamburgers.css';
+
+	.hamburger {
+		color: white;
+	}
+
 	.logo-image {
 		filter: invert();
 		height: 4rem;
