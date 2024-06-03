@@ -136,7 +136,7 @@
 	}
 	.navbar-mobile {
 		font-family: 'Montserrat', sans-serif;
-		background-color: #458dc0;
+		background-color: #090b13;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -153,7 +153,7 @@
 
 	.navbar-desktop {
 		font-family: 'Montserrat', sans-serif;
-		background-color: #458dc0;
+		background-color: #090b13;
 		position: fixed;
 		top: 0;
 		left: 0;
