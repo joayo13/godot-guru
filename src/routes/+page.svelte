@@ -1,3 +1,4 @@
+
 <main class="main">
 	<section class="intro">
 		<h2>Go from <strong class="beginner">beginner</strong> to <strong class="master">master</strong>.</h2>
@@ -18,7 +19,12 @@
 		position: relative;
 		overflow-x: hidden;
 		overflow-y: hidden;
-		height: 26rem;
+		height: 200rem;
+	}
+	@media (max-width: 1600px) {
+		.logo-svg {
+			visibility: hidden;
+		}
 	}
 	.logo-svg {
 		position: absolute;
@@ -48,6 +54,11 @@
 	.master {
 		color: rgb(211, 138, 138);
 	}
+	@keyframes slidebg {
+  	to {
+    	background-position:20vw;
+  	}
+	}
 	@keyframes rotate {
   	from {
     	transform: rotate(0deg);
@@ -55,5 +66,6 @@
   	to {
     	transform: rotate(360deg);
   	}
+	
 }
 </style>
