@@ -12,10 +12,11 @@
   
   <style>
     .review {
-      border: 1px solid #ddd;
+      display: grid;
+      background-color: #090b13;
       padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 5px;
+      margin: 1rem;
+      border-radius: 1rem;
     }
   
     .review h3 {

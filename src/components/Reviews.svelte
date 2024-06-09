@@ -3,8 +3,6 @@
   
     let reviews = [
       { name: 'Jordan T.', rating: 5, comment: "This platform is a game-changer! The lessons are well-structured and easy to follow, making complex game development concepts accessible even for beginners. The instructors are knowledgeable and always willing to help. I've already created my first game, and I couldn't be more thrilled!"},
-      { name: 'Alex R.', rating: 5, comment: "Absolutely fantastic! The blend of theory and practical exercises really helped solidify my understanding of game development. The community is also very supportive, and the resources available are top-notch. Highly recommend this platform to anyone serious about learning game development."},
-      { name: 'Sam K.', rating: 5, comment: "I've tried several online courses, but this platform stands out for its comprehensive curriculum and engaging teaching style. The interactive projects are both challenging and fun, and I've learned so much in such a short time. Five stars all the way!" }
     ];
   </script>
   
@@ -39,7 +37,9 @@
       display: flex;
       flex-direction: column;
       max-width: 600px;
-      margin: 0 auto;
+      margin-top: 10rem;
+      margin-left: auto;
+      margin-right: auto;
     }
     @keyframes rotate {
   	from {
