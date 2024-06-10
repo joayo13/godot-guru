@@ -2,6 +2,7 @@
 	import Button from '@smui/button';
 	import Reviews from '../components/Reviews.svelte';
 	import { onMount } from 'svelte';
+	import Plans from '../components/Plans.svelte';
 	let is_mobile = false;
 
 	function checkMobile() {
@@ -44,6 +45,9 @@
 	<section class="reviews">
 		<Reviews></Reviews>
 	</section>
+	<section class="plans">
+		<Plans></Plans>
+	</section>
 </main>
 
 <style>
@@ -82,10 +86,11 @@
 		font-size: 4rem;
 	}
 	p {
-		font-size: 1rem;
+		font-size: 1.2em;
 	}
 	em {
 		line-height: 1.5rem;
+		font-size: 1.2em;
 	}
 	.main {
 		background: linear-gradient(to bottom, #121f2b, #090b13);
@@ -93,12 +98,6 @@
 		background-color: #121f2b;
 		color: white;
 		width: 100%;
-	}
-	.beginner {
-		color: rgb(98, 212, 98);
-	}
-	.master {
-		color: rgb(211, 138, 138);
 	}
 	@keyframes slidebg {
 		to {

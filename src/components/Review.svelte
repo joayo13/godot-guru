@@ -21,6 +21,7 @@
 
 <style>
 	.review {
+		background-color: rgba(0, 0, 0, 0.5);
 		display: grid;
 		padding: 1rem;
 		margin: 1rem;
@@ -40,12 +41,13 @@
 	}
 	.review h3 {
 		margin: 0;
-		font-size: 1.2rem;
+		font-size: 1.5em;
 	}
 
 	.review p {
 		margin: 0.5rem 0;
-		line-height: 1.5rem;
+		line-height: 1.2em;
+		font-size: 1.2em;
 	}
 	.image-container {
 		height: 8rem;
