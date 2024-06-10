@@ -2,13 +2,16 @@
     import Review from './Review.svelte';
   
     let reviews = [
-      { name: 'Jordan T.', rating: 5, comment: "This platform is a game-changer! The lessons are well-structured and easy to follow, making complex game development concepts accessible even for beginners. The instructors are knowledgeable and always willing to help. I've already created my first game, and I couldn't be more thrilled!"},
+      { name: 'Jordan T.', rating: 5, 
+      comment: "This platform is a game-changer! The lessons are well-structured and easy to follow, making complex game development concepts accessible even for beginners. The instructors are knowledgeable and always willing to help. I've already created my first game, and I couldn't be more thrilled!",
+      image: "jordan-t.jpg"
+    },
     ];
   </script>
   
   <div class="reviews">
-    {#each reviews as { name, rating, comment }}
-      <Review {name} {rating} {comment} />
+    {#each reviews as { name, rating, comment, image}}
+      <Review {name} {rating} {comment} {image}/>
     {/each}
     <svg class="logo-svg" width="197" height="197" viewBox="0 0 197 197" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M97.8 43.4C67.64 43.4 43.2 67.84 43.2 98C43.2 128.16 67.64 152.6 97.8 152.6C127.96 152.6 152.4 128.16 152.4 98C152.4 67.84 127.96 43.4 97.8 43.4ZM97.8 142.2C73.36 142.2 53.6 122.44 53.6 98C53.6 73.56 73.36 53.8 97.8 53.8C122.24 53.8 142 73.56 142 98C142 122.44 122.24 142.2 97.8 142.2Z" fill="black"/>
@@ -19,7 +22,7 @@
   <style>
     @media (max-width: 1600px) {
 		.logo-svg {
-			visibility: hidden;
+      display: none;
 		}
 	}
     
@@ -37,7 +40,6 @@
       display: flex;
       flex-direction: column;
       max-width: 600px;
-      margin-top: 10rem;
       margin-left: auto;
       margin-right: auto;
     }

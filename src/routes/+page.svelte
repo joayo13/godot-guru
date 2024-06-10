@@ -38,7 +38,7 @@
 	}
 	@media (max-width: 1600px) {
 		.logo-svg {
-			visibility: hidden;
+			display: none;
 		}
 	}
 	.logo-svg {
@@ -56,6 +56,9 @@
 	}
 	p {
 		font-size: 1rem;
+	}
+	em {
+		line-height: 1.5rem;
 	}
 	.main {
 		font-family: 'Montserrat', sans-serif;
