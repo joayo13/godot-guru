@@ -89,6 +89,7 @@
 		font-size: 4rem;
 	}
 	p {
+		line-height: 1.5rem;
 		font-size: 1.2em;
 	}
 	em {
@@ -100,11 +101,6 @@
 		background-color: #121f2b;
 		color: white;
 		width: 100%;
-	}
-	@keyframes slidebg {
-		to {
-			background-position: 20vw;
-		}
 	}
 	@keyframes rotate {
 		from {
