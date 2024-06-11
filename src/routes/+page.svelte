@@ -93,7 +93,6 @@
 		font-size: 1.2em;
 	}
 	.main {
-		background: linear-gradient(to bottom, #121f2b, #090b13);
 		font-family: 'Montserrat', sans-serif;
 		background-color: #121f2b;
 		color: white;

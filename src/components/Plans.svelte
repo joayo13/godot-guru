@@ -5,10 +5,14 @@
   <style>
     .plans-container {
       display: flex;
-      padding-left: 10rem;
-      padding-right: 10rem;
-      justify-content: space-around;
-      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+    @media (max-width: 1000px) {
+      .plans-container {
+        flex-direction: column;
+      }
     }
   
     .plan {

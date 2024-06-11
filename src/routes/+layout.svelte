@@ -33,6 +33,7 @@
 	});
 </script>
 
+<main>
 <nav>
 	{#if is_mobile && nav_visible}
 		<div
@@ -95,8 +96,31 @@
 		</div>
 	{/if}
 </nav>
-
 <slot></slot>
+<footer>
+	<p style="color: white;">&copy; 2024 Godot Guru. All rights reserved.</p>
+	<nav class="footer-nav">
+		<a href="/">Home</a>
+		<a href="/about">About</a>
+		<a href="/contact">Contact</a>
+		<a href="/privacy-policy">Plans & Pricing</a>
+		
+	  </nav>
+	  <div class="social-media">
+		<a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+		  <img src="facebook-icon.png" alt="Facebook" />
+		</a>
+		<a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
+		  <img src="twitter-icon.png" alt="Twitter" />
+		</a>
+		<a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+		  <img src="instagram-icon.png" alt="Instagram" />
+		</a>
+	  </div>
+</footer>
+</main>
+
+
 
 <style>
 	@import 'hamburgers/dist/hamburgers.css';
@@ -181,5 +205,28 @@
 		height: 100%;
 		background: rgba(0, 0, 0, 0.5);
 		z-index: 1;
+	}
+	footer {
+		padding: 2rem;
+		font-family: 'Montserrat', sans-serif;
+		height: 15rem;
+		background-color: #090b13;
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		gap: 1rem;
+	}
+	footer a {
+		color: white;
+	}
+	.footer-nav {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	.social-media {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
 	}
 </style>
