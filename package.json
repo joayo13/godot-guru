@@ -13,12 +13,14 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"prepare": "npm run smui-theme",
-		"smui-theme": "smui-theme compile static/smui.css -i src/theme"
+		"prepare": "npm run smui-theme-light && npm run smui-theme-dark",
+		"smui-theme-light": "smui-theme compile static/smui.css -i src/theme",
+		"smui-theme-dark": "smui-theme compile static/smui-dark.css -i src/theme/dark"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
 		"@smui/button": "^7.0.0",
+		"@smui/textfield": "^7.0.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -40,6 +42,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"hamburgers": "^1.2.1"
+		"hamburgers": "^1.2.1",
+		"svelte-material-ui": "^7.0.0"
 	}
 }

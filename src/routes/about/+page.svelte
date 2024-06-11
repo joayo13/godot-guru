@@ -15,8 +15,6 @@
 <style>
     h2 {
 		font-size: 4rem;
-        margin-left: auto;
-        margin-right: auto;
         max-width: max-content;
 	}
 	p {
