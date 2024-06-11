@@ -34,93 +34,105 @@
 </script>
 
 <main>
-<nav>
-	{#if is_mobile && nav_visible}
-		<div
-			class="navbar-mobile"
-			role="navigation"
-			transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
-		>
-			<div class="logo-container">
-				<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
-				<strong style="color: white;">GODOT GURU</strong>
-			</div>
-			<button
-				class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
-				on:click={toggleMenu}
-				aria-expanded={menu_open}
-				aria-controls="mobile-menu"
+	<nav>
+		{#if is_mobile && nav_visible}
+			<div
+				class="navbar-mobile"
+				role="navigation"
+				transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
 			>
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</button>
-		</div>
-	{:else if !is_mobile && nav_visible}
-		<div
-			role="navigation"
-			aria-label="Main Navigation"
-			class="navbar-desktop"
-			transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
-		>
-			<div class="logo-container">
-				<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
-				<strong style="color: white;">GODOT GURU</strong>
+				<div class="logo-container">
+					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
+					<strong style="color: white;">GODOT GURU</strong>
+				</div>
+				<button
+					class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
+					on:click={toggleMenu}
+					aria-expanded={menu_open}
+					aria-controls="mobile-menu"
+				>
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
 			</div>
+		{:else if !is_mobile && nav_visible}
+			<div
+				role="navigation"
+				aria-label="Main Navigation"
+				class="navbar-desktop"
+				transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
+			>
+				<div class="logo-container">
+					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
+					<strong style="color: white;">GODOT GURU</strong>
+				</div>
 
-			<div>
-				<a href="/about">About</a>
+				<div>
+					<a href="/about">About</a>
+					<a href="/contact">Contact</a>
+					<a href="/settings">Plans & Pricing</a>
+				</div>
+			</div>
+		{/if}
+		<p>{`isMobile: ${is_mobile}`}</p>
+		{#if menu_open}
+			<div
+				class="overlay"
+				on:click={handleOverlayClick}
+				role="presentation"
+				transition:fade={{ delay: 250, duration: 300, easing: quintOut }}
+			></div>
+			<div
+				class="main-nav-mobile"
+				role="navigation"
+				aria-label="Main Navigation"
+				aria-hidden={!menu_open}
+				transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
+			>
+				<a href="#about">About</a>
 				<a href="/contact">Contact</a>
-				<a href="/settings">Plans & Pricing</a>
+				<a href="#services">Plans & Pricing</a>
 			</div>
-		</div>
-	{/if}
-	<p>{`isMobile: ${is_mobile}`}</p>
-	{#if menu_open}
-		<div
-			class="overlay"
-			on:click={handleOverlayClick}
-			role="presentation"
-			transition:fade={{ delay: 250, duration: 300, easing: quintOut }}
-		></div>
-		<div
-			class="main-nav-mobile"
-			role="navigation"
-			aria-label="Main Navigation"
-			aria-hidden={!menu_open}
-			transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
-		>
-			<a href="#about">About</a>
+		{/if}
+	</nav>
+	<slot></slot>
+	<footer>
+		<p style="color: white;">&copy; 2024 Godot Guru. All rights reserved.</p>
+		<nav class="footer-nav">
+			<a href="/">Home</a>
+			<a href="/about">About</a>
 			<a href="/contact">Contact</a>
-			<a href="#services">Plans & Pricing</a>
+			<a href="/privacy-policy">Plans & Pricing</a>
+		</nav>
+		<div class="social-media">
+			<a
+				href="https://www.facebook.com"
+				aria-label="Facebook"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="facebook-icon.png" alt="Facebook" />
+			</a>
+			<a
+				href="https://www.twitter.com"
+				aria-label="Twitter"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="twitter-icon.png" alt="Twitter" />
+			</a>
+			<a
+				href="https://www.instagram.com"
+				aria-label="Instagram"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="instagram-icon.png" alt="Instagram" />
+			</a>
 		</div>
-	{/if}
-</nav>
-<slot></slot>
-<footer>
-	<p style="color: white;">&copy; 2024 Godot Guru. All rights reserved.</p>
-	<nav class="footer-nav">
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/contact">Contact</a>
-		<a href="/privacy-policy">Plans & Pricing</a>
-		
-	  </nav>
-	  <div class="social-media">
-		<a href="https://www.facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-		  <img src="facebook-icon.png" alt="Facebook" />
-		</a>
-		<a href="https://www.twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-		  <img src="twitter-icon.png" alt="Twitter" />
-		</a>
-		<a href="https://www.instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-		  <img src="instagram-icon.png" alt="Instagram" />
-		</a>
-	  </div>
-</footer>
+	</footer>
 </main>
-
-
 
 <style>
 	@import 'hamburgers/dist/hamburgers.css';
