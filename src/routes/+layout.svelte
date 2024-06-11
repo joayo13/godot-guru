@@ -41,10 +41,10 @@
 				role="navigation"
 				transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
 			>
-				<div class="logo-container">
+				<a href="/" class="logo-container">
 					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 					<strong style="color: white;">GODOT GURU</strong>
-				</div>
+				</a>
 				<button
 					class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
 					on:click={toggleMenu}
@@ -63,10 +63,10 @@
 				class="navbar-desktop"
 				transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
 			>
-				<div class="logo-container">
+				<a href="/" class="logo-container">
 					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 					<strong style="color: white;">GODOT GURU</strong>
-				</div>
+				</a>
 
 				<div>
 					<a href="/about">About</a>
@@ -145,9 +145,11 @@
 		width: 4rem;
 	}
 	.logo-container {
+		text-decoration: none;
 		display: flex;
 		align-items: center;
 		gap: 1rem;
+		cursor: pointer;
 	}
 	.main-nav-mobile {
 		margin-top: 5rem;

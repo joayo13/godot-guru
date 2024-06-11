@@ -55,6 +55,7 @@
 		flex-direction: column;
 		margin-left: auto;
 		margin-right: auto;
+		max-width: 50rem;
 		line-height: 1.5rem;
 		font-size: 1.2em;
 	}
