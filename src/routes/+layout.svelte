@@ -219,6 +219,7 @@
 		z-index: 1;
 	}
 	footer {
+		position: relative;
 		padding: 2rem;
 		font-family: 'Montserrat', sans-serif;
 		height: 15rem;
@@ -227,6 +228,7 @@
 		align-items: center;
 		justify-content: space-evenly;
 		gap: 1rem;
+		z-index: 1;
 	}
 	footer a {
 		color: white;

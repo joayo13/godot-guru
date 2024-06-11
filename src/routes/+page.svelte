@@ -51,6 +51,9 @@
 </main>
 
 <style>
+	main {
+		overflow: hidden;
+	}
 	section {
 		padding: 1rem;
 	}

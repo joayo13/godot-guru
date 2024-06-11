@@ -1,5 +1,4 @@
 <script>
-	import Review from './Review.svelte';
 
 	let reviews = [
 		{
@@ -13,9 +12,6 @@
 </script>
 
 <div class="reviews">
-	{#each reviews as { name, rating, comment, image }}
-		<Review {name} {rating} {comment} {image} />
-	{/each}
 	<svg
 		class="logo-svg"
 		width="197"
@@ -33,6 +29,8 @@
 			fill="black"
 		/>
 	</svg>
+	<em>"This platform is a game-changer! The lessons are well-structured and easy to follow, making complex game development concepts accessible even for beginners. The instructors are knowledgeable and always willing to help. I've already created my first game, and I couldn't be more thrilled!"</em>
+	<p>- Jordan T.</p>
 </div>
 
 <style>
@@ -55,9 +53,10 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		max-width: 600px;
 		margin-left: auto;
 		margin-right: auto;
+		line-height: 1.5rem;
+		font-size: 1.2em;
 	}
 	@keyframes rotate {
 		from {
