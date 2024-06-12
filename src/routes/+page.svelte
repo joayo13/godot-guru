@@ -17,9 +17,7 @@
 
 <main class="main">
 	<section class="intro">
-		<h2>
-			Go from <strong class="beginner">beginner</strong> to <strong class="master">master</strong>.
-		</h2>
+		<h2>Go from beginner to master.</h2>
 		<div class="button-quote-container">
 			<em>"The best way to predict the future is to create it." — Peter Drucker</em>
 			<Button touch variant="raised">Start Creating</Button>

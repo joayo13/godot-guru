@@ -1,13 +1,16 @@
 :root {
-    --bg-color-page: #e7e7e7;
-    --bg-color-nav: #eeeeee;
-    --text-color: #131313;
-    --filter-invert: none;
+	--bg-color-page: #e7e7e7;
+	--bg-color-nav: #eeeeee;
+	--text-color: #131313;
+	--filter-invert: none;
 }
 
 .dark-mode {
-    --bg-color-page: #121f2b;
-    --bg-color-nav: #090b13;
-    --text-color: #ececec;
-    --filter-invert: invert();
+	--bg-color-page: #121f2b;
+	--bg-color-nav: #090b13;
+	--text-color: #ececec;
+	--filter-invert: invert();
+}
+* {
+	transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }

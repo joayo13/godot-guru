@@ -21,17 +21,17 @@
 		/>
 		%sveltekit.head%
 		<script>
-			(function() {
-			  const storedTheme = sessionStorage.getItem('theme');
-			  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-		
-			  if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
-				document.documentElement.classList.add('dark-mode');
-			  } else {
-				document.documentElement.classList.remove('dark-mode');
-			  }
+			(function () {
+				const storedTheme = sessionStorage.getItem('theme');
+				const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+				if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
+					document.documentElement.classList.add('dark-mode');
+				} else {
+					document.documentElement.classList.remove('dark-mode');
+				}
 			})();
-		  </script>
+		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">%sveltekit.body%</div>

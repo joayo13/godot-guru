@@ -3,43 +3,43 @@
 	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import Button from '@smui/button';
-	import '../app.css'
+	import Switch from '@smui/switch';
+	import '../app.css';
 	let is_mobile = false;
 	let menu_open = false;
 	let nav_visible = true;
 	let prev_scrollY: number;
 
 	function setThemeOnLoad() {
-    const storedTheme = sessionStorage.getItem('theme');
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+		const storedTheme = sessionStorage.getItem('theme');
+		const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
-      document.documentElement.classList.add('dark-mode');
-	  sessionStorage.setItem('theme', 'dark')
-	  removeStylesheet('smui.css');
-      addStylesheet('smui-dark.css');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-	  sessionStorage.setItem('theme', 'light')
-	  removeStylesheet('smui-dark.css');
-      addStylesheet('smui.css');
-    }
-  }
-  function toggleTheme() {
-	let theme = sessionStorage.getItem('theme')
+		if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
+			document.documentElement.classList.add('dark-mode');
+			sessionStorage.setItem('theme', 'dark');
+			removeStylesheet('smui.css');
+			addStylesheet('smui-dark.css');
+		} else {
+			document.documentElement.classList.remove('dark-mode');
+			sessionStorage.setItem('theme', 'light');
+			removeStylesheet('smui-dark.css');
+			addStylesheet('smui.css');
+		}
+	}
+	function toggleTheme() {
+		let theme = sessionStorage.getItem('theme');
 		if (theme === 'dark') {
-			sessionStorage.setItem('theme', 'light')
+			sessionStorage.setItem('theme', 'light');
 			document.documentElement.classList.remove('dark-mode');
 			removeStylesheet('smui-dark.css');
-      		addStylesheet('smui.css');
-		}
-		else if (theme === 'light') {
-			sessionStorage.setItem('theme', 'dark')
+			addStylesheet('smui.css');
+		} else if (theme === 'light') {
+			sessionStorage.setItem('theme', 'dark');
 			document.documentElement.classList.add('dark-mode');
 			removeStylesheet('smui.css');
-      		addStylesheet('smui-dark.css');
+			addStylesheet('smui-dark.css');
 		}
-  }
+	}
 	function toggleMenu() {
 		menu_open = !menu_open;
 		document.body.style.overflow = menu_open ? 'hidden' : 'auto';
@@ -59,17 +59,17 @@
 		}
 		prev_scrollY = window.scrollY;
 	}
-	function addStylesheet(name:String) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = `/${name}`;
-    document.head.appendChild(link);
-  }
+	function addStylesheet(name: String) {
+		const link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.href = `/${name}`;
+		document.head.appendChild(link);
+	}
 
-  function removeStylesheet(name:String) {
-    const links = document.head.querySelectorAll(`link[href="/${name}"]`);
-    links.forEach(link => link.remove());
-  }
+	function removeStylesheet(name: String) {
+		const links = document.head.querySelectorAll(`link[href="/${name}"]`);
+		links.forEach((link) => link.remove());
+	}
 
 	onMount(() => {
 		setThemeOnLoad();
