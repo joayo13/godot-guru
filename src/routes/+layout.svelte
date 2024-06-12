@@ -2,13 +2,12 @@
 	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
-	import Button from '@smui/button';
-	import Switch from '@smui/switch';
 	import '../app.css';
 	let is_mobile = false;
 	let menu_open = false;
 	let nav_visible = true;
 	let prev_scrollY: number;
+	let isThemeSwitchDark = false
 
 	function setThemeOnLoad() {
 		const storedTheme = sessionStorage.getItem('theme');
@@ -17,13 +16,14 @@
 		if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
 			document.documentElement.classList.add('dark-mode');
 			sessionStorage.setItem('theme', 'dark');
-			removeStylesheet('smui.css');
 			addStylesheet('smui-dark.css');
+			removeStylesheet('smui.css');
+			isThemeSwitchDark = true
 		} else {
 			document.documentElement.classList.remove('dark-mode');
 			sessionStorage.setItem('theme', 'light');
-			removeStylesheet('smui-dark.css');
 			addStylesheet('smui.css');
+			removeStylesheet('smui-dark.css');
 		}
 	}
 	function toggleTheme() {
@@ -31,13 +31,15 @@
 		if (theme === 'dark') {
 			sessionStorage.setItem('theme', 'light');
 			document.documentElement.classList.remove('dark-mode');
-			removeStylesheet('smui-dark.css');
 			addStylesheet('smui.css');
+			removeStylesheet('smui-dark.css');
+			isThemeSwitchDark = false
 		} else if (theme === 'light') {
 			sessionStorage.setItem('theme', 'dark');
 			document.documentElement.classList.add('dark-mode');
-			removeStylesheet('smui.css');
 			addStylesheet('smui-dark.css');
+			removeStylesheet('smui.css');
+			isThemeSwitchDark = true
 		}
 	}
 	function toggleMenu() {
@@ -89,7 +91,7 @@
 			>
 				<a href="/" class="logo-container">
 					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
-					<strong style="color: white;">GODOT GURU</strong>
+					<strong>GODOT GURU</strong>
 				</a>
 				<button
 					class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
@@ -113,13 +115,26 @@
 					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
 					<strong>GODOT GURU</strong>
 				</a>
-
+				<div style="flex-grow: 1;"></div>
 				<div>
 					<a href="/about">About</a>
 					<a href="/contact">Contact</a>
 					<a href="/settings">Plans & Pricing</a>
-					<Button on:click={toggleTheme}>TOGGLE DARK MODE</Button>
 				</div>
+				<button aria-controls="dark mode" class="theme-switch-container" on:click={toggleTheme}>
+					<span class={`theme-switch-knob ${isThemeSwitchDark ? 'theme-switch-dark' : ''} `}>
+						{#if isThemeSwitchDark}
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+						  </svg>
+						  {:else}
+						  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+						  </svg>							  
+						{/if}
+
+					</span>
+				</button>
 			</div>
 		{/if}
 		<p>{`isMobile: ${is_mobile}`}</p>
@@ -140,6 +155,21 @@
 				<a href="#about">About</a>
 				<a href="/contact">Contact</a>
 				<a href="#services">Plans & Pricing</a>
+				<div class="main-nav-mobile-divider"></div>
+				<button aria-controls="dark mode" class="theme-switch-container" on:click={toggleTheme}>
+					<span class={`theme-switch-knob ${isThemeSwitchDark ? 'theme-switch-dark' : ''} `}>
+						{#if isThemeSwitchDark}
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+						  </svg>
+						  {:else}
+						  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+						  </svg>							  
+						{/if}
+
+					</span>
+				</button>
 			</div>
 		{/if}
 	</nav>
@@ -186,6 +216,34 @@
 	:global(body) {
 		margin: 0px;
 	}
+	.theme-switch-container {
+		position: relative;
+		width: 3rem;
+		height: 1.5rem;
+		border-radius: 1rem;
+		border: 1px solid var(--text-color);
+		background-color: transparent;
+		opacity: 0.6;
+	}
+	.theme-switch-container:focus {
+		opacity: 1;
+	}
+	.theme-switch-container:hover {
+		opacity: 1;
+	}
+	.theme-switch-knob {
+		position: absolute;
+		top: 1px;
+		left: 1px;
+		width: 1.25rem;
+		height: 1.25rem;
+		border-radius: 50%;
+		background-color: var(--bg-color-page);
+		color: var(--text-color);
+	}
+	.theme-switch-dark {
+		transform: translateX(23px);
+	}
 	.logo-image {
 		filter: var(--filter-invert);
 		height: 4rem;
@@ -200,6 +258,7 @@
 		cursor: pointer;
 	}
 	.main-nav-mobile {
+		padding: 1rem;
 		margin-top: 5rem;
 		font-family: 'Montserrat', sans-serif;
 		position: fixed;
@@ -208,17 +267,24 @@
 		height: 100%;
 		width: 250px;
 		background: var(--bg-color-page);
-		color: white;
+		color: var(--text-color);
 		overflow-y: auto;
 		white-space: nowrap;
 		z-index: 2;
 	}
+	.main-nav-mobile-divider {
+		height: 1px;
+		background-color: var(--text-color);
+		width: 100%;
+		margin-bottom: 1rem;
+	}
 
 	.main-nav-mobile a {
 		display: block;
-		padding: 1em;
-		color: white;
+		color: var(--text-color);
 		text-decoration: none;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 	.navbar-mobile {
 		font-family: 'Montserrat', sans-serif;
