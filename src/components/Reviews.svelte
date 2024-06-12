@@ -1,5 +1,4 @@
 <script>
-
 	let reviews = [
 		{
 			name: 'Jordan T.',
@@ -29,7 +28,12 @@
 			fill="black"
 		/>
 	</svg>
-	<em>"This platform is a game-changer! The lessons are well-structured and easy to follow, making complex game development concepts accessible even for beginners. The instructors are knowledgeable and always willing to help. I've already created my first game, and I couldn't be more thrilled!"</em>
+	<em
+		>"This platform is a game-changer! The lessons are well-structured and easy to follow, making
+		complex game development concepts accessible even for beginners. The instructors are
+		knowledgeable and always willing to help. I've already created my first game, and I couldn't be
+		more thrilled!"</em
+	>
 	<p>- Jordan T.</p>
 </div>
 

@@ -88,10 +88,6 @@
 	h2 {
 		font-size: 4rem;
 	}
-	p {
-		line-height: 1.5rem;
-		font-size: 1.2em;
-	}
 	em {
 		line-height: 1.5rem;
 		font-size: 1.2em;
