@@ -2,10 +2,44 @@
 	import { onMount } from 'svelte';
 	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import Button from '@smui/button';
+	import '../app.css'
 	let is_mobile = false;
 	let menu_open = false;
 	let nav_visible = true;
 	let prev_scrollY: number;
+
+	function setThemeOnLoad() {
+    const storedTheme = sessionStorage.getItem('theme');
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    if (storedTheme === 'dark' || (storedTheme === null && prefersDarkScheme)) {
+      document.documentElement.classList.add('dark-mode');
+	  sessionStorage.setItem('theme', 'dark')
+	  removeStylesheet('smui.css');
+      addStylesheet('smui-dark.css');
+    } else {
+      document.documentElement.classList.remove('dark-mode');
+	  sessionStorage.setItem('theme', 'light')
+	  removeStylesheet('smui-dark.css');
+      addStylesheet('smui.css');
+    }
+  }
+  function toggleTheme() {
+	let theme = sessionStorage.getItem('theme')
+		if (theme === 'dark') {
+			sessionStorage.setItem('theme', 'light')
+			document.documentElement.classList.remove('dark-mode');
+			removeStylesheet('smui-dark.css');
+      		addStylesheet('smui.css');
+		}
+		else if (theme === 'light') {
+			sessionStorage.setItem('theme', 'dark')
+			document.documentElement.classList.add('dark-mode');
+			removeStylesheet('smui.css');
+      		addStylesheet('smui-dark.css');
+		}
+  }
 	function toggleMenu() {
 		menu_open = !menu_open;
 		document.body.style.overflow = menu_open ? 'hidden' : 'auto';
@@ -25,8 +59,20 @@
 		}
 		prev_scrollY = window.scrollY;
 	}
+	function addStylesheet(name:String) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = `/${name}`;
+    document.head.appendChild(link);
+  }
+
+  function removeStylesheet(name:String) {
+    const links = document.head.querySelectorAll(`link[href="/${name}"]`);
+    links.forEach(link => link.remove());
+  }
 
 	onMount(() => {
+		setThemeOnLoad();
 		checkMobile();
 		window.addEventListener('resize', checkMobile);
 		window.addEventListener('scroll', checkNavShouldBeVisible);
@@ -65,13 +111,14 @@
 			>
 				<a href="/" class="logo-container">
 					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
-					<strong style="color: white;">GODOT GURU</strong>
+					<strong>GODOT GURU</strong>
 				</a>
 
 				<div>
 					<a href="/about">About</a>
 					<a href="/contact">Contact</a>
 					<a href="/settings">Plans & Pricing</a>
+					<Button on:click={toggleTheme}>TOGGLE DARK MODE</Button>
 				</div>
 			</div>
 		{/if}
@@ -98,7 +145,7 @@
 	</nav>
 	<slot></slot>
 	<footer>
-		<p style="color: white;">&copy; 2024 Godot Guru. All rights reserved.</p>
+		<p>&copy; 2024 Godot Guru. All rights reserved.</p>
 		<nav class="footer-nav">
 			<a href="/">Home</a>
 			<a href="/about">About</a>
@@ -140,11 +187,12 @@
 		margin: 0px;
 	}
 	.logo-image {
-		filter: invert();
+		filter: var(--filter-invert);
 		height: 4rem;
 		width: 4rem;
 	}
 	.logo-container {
+		color: var(--text-color);
 		text-decoration: none;
 		display: flex;
 		align-items: center;
@@ -159,7 +207,7 @@
 		right: 0;
 		height: 100%;
 		width: 250px;
-		background: #121f2b;
+		background: var(--bg-color-page);
 		color: white;
 		overflow-y: auto;
 		white-space: nowrap;
@@ -174,7 +222,7 @@
 	}
 	.navbar-mobile {
 		font-family: 'Montserrat', sans-serif;
-		background-color: #090b13;
+		background-color: var(--bg-color-nav);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -191,7 +239,7 @@
 
 	.navbar-desktop {
 		font-family: 'Montserrat', sans-serif;
-		background-color: #090b13;
+		background-color: var(--bg-color-nav);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -206,7 +254,7 @@
 		z-index: 1;
 	}
 	.navbar-desktop a {
-		color: white;
+		color: var(--text-color);
 		padding: 1rem;
 	}
 
@@ -225,7 +273,8 @@
 		padding: 2rem;
 		font-family: 'Montserrat', sans-serif;
 		height: 15rem;
-		background-color: #090b13;
+		background-color: var(--bg-color-nav);
+		color: var(--text-color);
 		display: flex;
 		align-items: center;
 		justify-content: space-evenly;
@@ -233,7 +282,7 @@
 		z-index: 1;
 	}
 	footer a {
-		color: white;
+		color: var(--text-color);
 	}
 	.footer-nav {
 		display: flex;

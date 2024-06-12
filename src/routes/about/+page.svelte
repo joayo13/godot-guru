@@ -37,8 +37,8 @@
 	main {
 		padding-top: 4rem;
 		font-family: 'Montserrat', sans-serif;
-		background-color: #121f2b;
-		color: white;
+		background-color: var(--bg-color-page);
+		color: var(--text-color);
 		width: 100%;
 	}
 	section {

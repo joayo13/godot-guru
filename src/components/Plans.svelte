@@ -47,7 +47,7 @@
 
 	.plan {
 		border-radius: 1rem;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: var(--bg-color-nav);
 		padding: 20px;
 		margin: 10px;
 		flex: 1;
