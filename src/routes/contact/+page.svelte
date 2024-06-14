@@ -10,13 +10,18 @@
 <main>
 	<section class="head-section" style="max-width: 60rem;">
 		<h2>Contact Form</h2>
-		<p>Have some questions? Feel free to reach out by filling the form below.</p>
 		<form>
 			<div>
 				<Textfield bind:value={valueA} label="Your Name" required style="width: 20rem;" />
 			</div>
 			<div>
-				<Textfield bind:value={valueB} label="Email" required type="email" style="width: 20rem;" />
+				<Textfield
+					bind:value={valueB}
+					label="Your Email"
+					required
+					type="email"
+					style="width: 20rem;"
+				/>
 			</div>
 			<div>
 				<Textfield
@@ -30,7 +35,7 @@
 					<CharacterCounter slot="internalCounter">0 / 100</CharacterCounter>
 				</Textfield>
 			</div>
-			<Button type="submit" touch variant="raised" style="width: 20rem;">submit</Button>
+			<Button type="submit" touch variant="raised" style="width: 20rem;">send message</Button>
 		</form>
 	</section>
 </main>
@@ -39,10 +44,13 @@
 	h2 {
 		font-size: 4rem;
 		max-width: max-content;
+		text-align: center;
+		margin: 10px;
 	}
 	p {
 		line-height: 1.5rem;
 		font-size: 1.2em;
+		text-align: center;
 	}
 	em {
 		line-height: 1.5rem;
@@ -57,6 +65,10 @@
 	}
 	section {
 		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.head-section {
 		margin-left: auto;
