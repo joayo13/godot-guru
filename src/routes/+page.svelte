@@ -1,5 +1,5 @@
 <script>
-	import Button from '@smui/button';
+	import Button, { Label, Icon } from '@smui/button';
 	import Reviews from '../components/Reviews.svelte';
 	import { onMount } from 'svelte';
 	import Plans from '../components/Plans.svelte';
@@ -18,10 +18,6 @@
 <main class="main">
 	<section class="intro">
 		<h2>Go from beginner to master.</h2>
-		<div class="button-quote-container">
-			<em>"The best way to predict the future is to create it." — Peter Drucker</em>
-			<Button touch variant="raised">Start Creating</Button>
-		</div>
 		<svg
 			class="logo-svg"
 			width="197"
@@ -45,6 +41,12 @@
 	</section>
 	<section class="plans">
 		<Plans></Plans>
+		<div class="select-a-plan">
+			<Button href="/plans" target="_blank" touch variant="outlined">
+				<Label>Select a plan</Label>
+				<Icon class="material-icons">chevron_right</Icon>
+			</Button>
+		</div>
 	</section>
 </main>
 
@@ -53,24 +55,23 @@
 		overflow: hidden;
 	}
 	section {
-		padding: 1rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+	.select-a-plan {
+		padding-bottom: 2rem;
+		margin-left: auto;
+		margin-right: auto;
+		width: max-content;
 	}
 	.intro {
 		padding-top: 4rem;
 		position: relative;
 		overflow: hidden;
 	}
-	.button-quote-container {
-		display: flex;
-		gap: 1rem;
-		align-items: center;
-	}
 	@media (max-width: 1600px) {
 		.logo-svg {
 			display: none;
-		}
-		.button-quote-container {
-			flex-direction: column;
 		}
 	}
 	.logo-svg {
@@ -85,10 +86,6 @@
 	}
 	h2 {
 		font-size: 4rem;
-	}
-	em {
-		line-height: 1.5rem;
-		font-size: 1.2em;
 	}
 	.main {
 		font-family: 'Montserrat', sans-serif;

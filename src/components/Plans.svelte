@@ -5,29 +5,26 @@
 <div class="plans-container">
 	<div class="plan">
 		<div class="plan-title">Basic Plan</div>
-		<div class="plan-price">$10/month</div>
+		<div class="plan-price">$50</div>
 		<ul class="plan-features">
-			<li>Feature 1</li>
-			<li>Feature 2</li>
-			<li>Feature 3</li>
+			<li>50+ hours video lessons.</li>
+			<li>50 interactive lessons.</li>
 		</ul>
 	</div>
 	<div class="plan">
 		<div class="plan-title">Standard Plan</div>
-		<div class="plan-price">$20/month</div>
+		<div class="plan-price">$100</div>
 		<ul class="plan-features">
-			<li>Feature 1</li>
-			<li>Feature 2</li>
-			<li>Feature 3</li>
+			<li>50+ hours video lessons.</li>
+			<li>125 interactive lessons.</li>
 		</ul>
 	</div>
 	<div class="plan">
 		<div class="plan-title">Premium Plan</div>
-		<div class="plan-price">$30/month</div>
+		<div class="plan-price">$200</div>
 		<ul class="plan-features">
-			<li>Feature 1</li>
-			<li>Feature 2</li>
-			<li>Feature 3</li>
+			<li>All benefits of previous plans.</li>
+			<li>1-on-1 mentoring</li>
 		</ul>
 	</div>
 </div>
@@ -38,6 +35,9 @@
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+		z-index: 1;
+		padding: 2rem;
+		position: relative;
 	}
 	@media (max-width: 1000px) {
 		.plans-container {
@@ -59,11 +59,6 @@
 			box-shadow 0.3s;
 	}
 
-	.plan:hover {
-		transform: translateY(-5px);
-		box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-	}
-
 	.plan-title {
 		font-size: 1.5em;
 		margin-bottom: 10px;
@@ -82,5 +77,7 @@
 
 	.plan-features li {
 		margin-bottom: 10px;
+		margin-left: 15px;
+		list-style: disc;
 	}
 </style>
