@@ -30,15 +30,15 @@
 		let theme = sessionStorage.getItem('theme');
 		if (theme === 'dark') {
 			sessionStorage.setItem('theme', 'light');
-			document.documentElement.classList.remove('dark-mode');
 			addStylesheet('smui.css');
 			removeStylesheet('smui-dark.css');
+			document.documentElement.classList.remove('dark-mode');
 			isThemeSwitchDark = false;
 		} else if (theme === 'light') {
 			sessionStorage.setItem('theme', 'dark');
-			document.documentElement.classList.add('dark-mode');
 			addStylesheet('smui-dark.css');
 			removeStylesheet('smui.css');
+			document.documentElement.classList.add('dark-mode');
 			isThemeSwitchDark = true;
 		}
 	}
@@ -163,7 +163,6 @@
 				</button>
 			</div>
 		{/if}
-		<p>{`isMobile: ${is_mobile}`}</p>
 		{#if menu_open}
 			<div
 				class="overlay"
@@ -178,9 +177,9 @@
 				aria-hidden={!menu_open}
 				transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
 			>
-				<a href="/about">About</a>
-				<a href="/contact">Contact</a>
-				<a href="/plans">Plans & Pricing</a>
+				<a on:click={toggleMenu} href="/about">About</a>
+				<a on:click={toggleMenu} href="/contact">Contact</a>
+				<a on:click={toggleMenu} href="/plans">Plans & Pricing</a>
 				<div class="main-nav-mobile-divider"></div>
 				<button
 					aria-label={isThemeSwitchDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -385,7 +384,7 @@
 		width: 100%;
 		height: 100%;
 		background: rgba(0, 0, 0, 0.5);
-		z-index: 1;
+		z-index: 2;
 	}
 	footer {
 		position: relative;

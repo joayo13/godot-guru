@@ -9,7 +9,7 @@
 
 <main>
 	<section class="head-section" style="max-width: 60rem;">
-		<h2>Contact Form</h2>
+		<h2>Contact Us</h2>
 		<form>
 			<div>
 				<Textfield bind:value={valueA} label="Your Name" required style="width: 20rem;" />
@@ -65,6 +65,8 @@
 	}
 	section {
 		padding: 1rem;
+		padding-top: 4rem;
+		padding-bottom: 4rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
