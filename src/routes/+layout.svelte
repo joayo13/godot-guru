@@ -119,7 +119,7 @@
 				<div>
 					<a href="/about">About</a>
 					<a href="/contact">Contact</a>
-					<a href="/settings">Plans & Pricing</a>
+					<a href="/plans">Plans & Pricing</a>
 				</div>
 				<button
 					aria-label={isThemeSwitchDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -178,9 +178,9 @@
 				aria-hidden={!menu_open}
 				transition:slide={{ delay: 250, duration: 300, easing: quintOut, axis: 'x' }}
 			>
-				<a href="#about">About</a>
+				<a href="/about">About</a>
 				<a href="/contact">Contact</a>
-				<a href="#services">Plans & Pricing</a>
+				<a href="/plans">Plans & Pricing</a>
 				<div class="main-nav-mobile-divider"></div>
 				<button
 					aria-label={isThemeSwitchDark ? 'Switch to light mode' : 'Switch to dark mode'}
@@ -232,7 +232,7 @@
 			<a href="/">Home</a>
 			<a href="/about">About</a>
 			<a href="/contact">Contact</a>
-			<a href="/privacy-policy">Plans & Pricing</a>
+			<a href="/plans">Plans & Pricing</a>
 		</nav>
 		<div class="social-media">
 			<a
@@ -276,6 +276,7 @@
 		border: 1px solid var(--text-color);
 		background-color: transparent;
 		opacity: 0.6;
+		cursor: pointer;
 	}
 	.theme-switch-container:focus {
 		opacity: 1;
