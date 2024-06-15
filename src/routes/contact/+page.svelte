@@ -1,10 +1,44 @@
 <script lang="ts">
 	import Textfield from '@smui/textfield';
 	import CharacterCounter from '@smui/textfield/character-counter';
+	import Snackbar, { Label, Actions } from '@smui/snackbar';
+	import LinearProgress from '@smui/linear-progress';
+	import IconButton from '@smui/icon-button';
 	import Button from '@smui/button';
+	import { onDestroy } from 'svelte';
 	let valueA = '';
 	let valueB = '';
 	let valueC = '';
+	let progress = 0;
+	let closed = false;
+	let timer: number;
+	let snackbarSuccess: Snackbar;
+	function handleSubmit() {
+		progress = 0;
+		reset();
+	}
+	onDestroy(() => {
+		clearInterval(timer);
+	});
+
+	function reset() {
+		progress = 0;
+		closed = false;
+		clearInterval(timer);
+		timer = setInterval(() => {
+			progress += 0.1;
+
+			if (progress >= 1) {
+				progress = 1;
+				closed = true;
+				clearInterval(timer);
+				snackbarSuccess.open();
+				valueA = '';
+				valueB = '';
+				valueC = '';
+			}
+		}, 100);
+	}
 </script>
 
 <main>
@@ -28,7 +62,7 @@
 				/>
 			</svg>
 		</div>
-		<form>
+		<form on:submit={handleSubmit}>
 			<div>
 				<Textfield bind:value={valueA} label="Your Name" required style="width: 20rem;" />
 			</div>
@@ -54,8 +88,15 @@
 				</Textfield>
 			</div>
 			<Button type="submit" touch variant="raised" style="width: 20rem;">send message</Button>
+			<LinearProgress {progress} {closed} />
 		</form>
 	</section>
+	<Snackbar bind:this={snackbarSuccess}>
+		<Label>Message Sent! We'll get back to you ASAP &lt;3</Label>
+		<Actions>
+			<IconButton class="material-icons" title="Dismiss">close</IconButton>
+		</Actions>
+	</Snackbar>
 </main>
 
 <style>

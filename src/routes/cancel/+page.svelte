@@ -67,12 +67,4 @@
 		gap: 16rem;
 		background-color: var(--bg-color-banner);
 	}
-	.banner-icon {
-		display: block;
-	}
-	@media (max-width: 1000px) {
-		.banner-icon {
-			display: none;
-		}
-	}
 </style>
