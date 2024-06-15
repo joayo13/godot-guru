@@ -102,6 +102,14 @@
 					<div class="plan-price">$50</div>
 					<ul class="plan-features">
 						<li>50+ hours video lessons.</li>
+						<ul>
+							<li>10 hours fundamentals</li>
+							<li>10 hours game physics</li>
+							<li>5 hours 3D graphics</li>
+							<li>5 hours 2D graphics</li>
+							<li>10 hours game design</li>
+							<li>10 hours case studies</li>
+						</ul>
 						<li>50 interactive lessons.</li>
 					</ul>
 					<Button on:click={handleCheckoutBasic} touch>
@@ -114,6 +122,14 @@
 					<div class="plan-price">$100</div>
 					<ul class="plan-features">
 						<li>50+ hours video lessons.</li>
+						<ul>
+							<li>10 hours fundamentals</li>
+							<li>10 hours game physics</li>
+							<li>5 hours 3D graphics</li>
+							<li>5 hours 2D graphics</li>
+							<li>10 hours game design</li>
+							<li>10 hours case studies</li>
+						</ul>
 						<li>125 interactive lessons.</li>
 					</ul>
 					<Button on:click={handleCheckoutStandard} touch>
@@ -127,6 +143,14 @@
 					<ul class="plan-features">
 						<li>All benefits of previous plans.</li>
 						<li>1-on-1 mentoring</li>
+						<ul>
+							<li>Career Advice</li>
+							<li>Code Reviews</li>
+							<li>Design Advice</li>
+							<li>Pair Programming</li>
+							<li>Troubleshooting</li>
+							<li>General Questions</li>
+						</ul>
 					</ul>
 					<Button on:click={handleCheckoutPremium} touch>
 						<Label style="text-decoration: underline;">Purchase Premium</Label>

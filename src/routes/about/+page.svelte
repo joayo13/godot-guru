@@ -114,6 +114,8 @@
 		margin-right: auto;
 		max-width: 60rem;
 		padding-top: 2rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 	.banner {
 		width: 100%;
