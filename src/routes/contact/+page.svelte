@@ -10,7 +10,7 @@
 	let valueB = '';
 	let valueC = '';
 	let progress = 0;
-	let closed = false;
+	let closed = true;
 	let timer: number;
 	let snackbarSuccess: Snackbar;
 	function handleSubmit() {
