@@ -114,7 +114,6 @@
 	}
 	main {
 		padding-top: 4rem;
-    padding-bottom: 4rem;
 		font-family: 'Montserrat', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);

@@ -8,8 +8,8 @@
 </script>
 
 <main>
-	<section class="head-section" style="max-width: 60rem;">
-		<h2>Contact Us</h2>
+	<section class="head-section" style="max-width: 20rem;">
+		<h2>Contact Form</h2>
 		<form>
 			<div>
 				<Textfield bind:value={valueA} label="Your Name" required style="width: 20rem;" />
@@ -44,8 +44,7 @@
 	h2 {
 		font-size: 4rem;
 		max-width: max-content;
-		text-align: center;
-		margin: 10px;
+		align-self: baseline;
 	}
 	p {
 		line-height: 1.5rem;
@@ -65,8 +64,6 @@
 	}
 	section {
 		padding: 1rem;
-		padding-top: 4rem;
-		padding-bottom: 4rem;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -80,5 +77,6 @@
 		display: flex;
 		flex-direction: column;
 		gap: 2rem;
+		padding-bottom: 2rem;
 	}
 </style>

@@ -42,7 +42,7 @@
 	<section class="plans">
 		<Plans></Plans>
 		<div class="select-a-plan">
-			<Button href="/plans" target="_blank" touch>
+			<Button href="/plans" touch>
 				<Label style="text-decoration: underline;">Select a plan</Label>
 				<Icon class="material-icons">chevron_right</Icon>
 			</Button>
