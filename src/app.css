@@ -1,6 +1,7 @@
 :root {
 	--bg-color-page: #e7e7e7;
 	--bg-color-nav: #eeeeee;
+	--bg-color-banner: #cecece;
 	--text-color: #131313;
 	--filter-invert: none;
 }
@@ -8,6 +9,7 @@
 .dark-mode {
 	--bg-color-page: #121f2b;
 	--bg-color-nav: #090b13;
+	--bg-color-banner: #203b4d;
 	--text-color: #ececec;
 	--filter-invert: invert();
 }
