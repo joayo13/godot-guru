@@ -1,17 +1,21 @@
-<script>
+<script lang="ts">
 	import { onMount } from 'svelte';
 	import { loadStripe } from '@stripe/stripe-js';
+	import type { Stripe } from '@stripe/stripe-js';
 	import Button, { Label, Icon } from '@smui/button';
 
-	// @ts-ignore
-	let stripe;
+	let stripe: Stripe | null;
 
 	onMount(async () => {
 		stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+		if (!stripe) {
+			console.error('Stripe failed to load')
+			return
+		}
 	});
 	const handleCheckoutBasic = async () => {
-		// @ts-ignore
-		const { error } = await stripe.redirectToCheckout({
+		if (stripe) {
+			const { error } = await stripe.redirectToCheckout({
 			lineItems: [{ price: import.meta.env.VITE_STRIPE_PRICE_ID_BASIC, quantity: 1 }],
 			mode: 'payment',
 			successUrl: window.location.origin + '/success',
@@ -21,12 +25,15 @@
 		if (error) {
 			console.error('Error:', error);
 		}
+		}
+		else {
+			console.error('Stripe failed to load')
+		}
 	};
 
-	// @ts-ignore
 	const handleCheckoutStandard = async () => {
-		// @ts-ignore
-		const { error } = await stripe.redirectToCheckout({
+		if (stripe) {
+			const { error } = await stripe.redirectToCheckout({
 			lineItems: [{ price: import.meta.env.VITE_STRIPE_PRICE_ID_STANDARD, quantity: 1 }],
 			mode: 'payment',
 			successUrl: window.location.origin + '/success',
@@ -36,10 +43,14 @@
 		if (error) {
 			console.error('Error:', error);
 		}
+		}
+		else {
+			console.error('Stripe failed to load')
+		}
 	};
 	const handleCheckoutPremium = async () => {
-		// @ts-ignore
-		const { error } = await stripe.redirectToCheckout({
+		if (stripe) {
+			const { error } = await stripe.redirectToCheckout({
 			lineItems: [{ price: import.meta.env.VITE_STRIPE_PRICE_ID_PREMIUM, quantity: 1 }],
 			mode: 'payment',
 			successUrl: window.location.origin + '/success',
@@ -48,6 +59,10 @@
 
 		if (error) {
 			console.error('Error:', error);
+		}
+		}
+		else {
+			console.error('Stripe failed to load')
 		}
 	};
 </script>
