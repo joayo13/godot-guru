@@ -263,7 +263,7 @@
 </main>
 
 <style>
-	@import 'hamburgers/dist/hamburgers.css';
+	@import '../hamburgers.css';
 	:global(body) {
 		margin: 0px;
 	}
