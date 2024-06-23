@@ -50,6 +50,7 @@
 			</svg>
 		</div>
 		<div class="text-section">
+			<div>
 			<em
 				>"Education is not just about teaching people facts; it's about inspiring them to see the
 				possibilities beyond those facts. This is especially true in game development, where
@@ -79,6 +80,8 @@
 				for those who stuggle financially.
 			</p>
 		</div>
+			<img class="image-container" alt="about-us" src="about-us-image2.jpg">
+	</div>
 	</section>
 </main>
 
@@ -110,6 +113,7 @@
 		margin-right: auto;
 	}
 	.text-section {
+		display: flex;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 60rem;
@@ -128,8 +132,16 @@
 	.banner-icon {
 		display: block;
 	}
+	.image-container {
+		object-fit: cover;
+		width: 20rem;
+		filter: grayscale(100%);
+	}
 	@media (max-width: 1000px) {
 		.banner-icon {
+			display: none;
+		}
+		.image-container {
 			display: none;
 		}
 	}
