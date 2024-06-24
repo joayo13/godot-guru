@@ -155,6 +155,7 @@
 	h3 {
 		font-size: 1.5rem;
 		line-height: 1.5rem;
+		font-weight: 400;
 	}
 	p {
 		line-height: 1.5rem;
