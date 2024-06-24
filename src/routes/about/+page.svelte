@@ -51,42 +51,45 @@
 		</div>
 		<div class="text-section">
 			<div>
-			<em
-				>"Education is not just about teaching people facts; it's about inspiring them to see the
-				possibilities beyond those facts. This is especially true in game development, where
-				creativity and innovation are paramount." — Shigeru Miyamoto</em
-			>
-			<h3>Our Mission</h3>
-			<p>
-				The quote above encapsulates what we aim to do. We aim to inspire our students and teach
-				them that learning is not something to be rushed. But a lifelong pursuit that can be
-				enjoyable, and bring joy. More than anything, we want to give our students the confidence to
-				step out and make mistakes, and empower them with not only the knowledge of how to make
-				games, but why to make games.
-			</p>
-			<h3>Our Approach</h3>
-			<p>
-				We believe in learning by doing, and by understanding the why before the how. We do this
-				with:
-			</p>
-			<ul>
-				<li>interactive lessons</li>
-				<li>one-on-one mentoring</li>
-				<li>project based learning</li>
-				<li>in-depth video tutorials</li>
-			</ul>
-			<p>
-				We aim to make our teaching affordable for all. We are always willing to make accommodations
-				for those who stuggle financially.
-			</p>
+				<em
+					>"Education is not just about teaching people facts; it's about inspiring them to see the
+					possibilities beyond those facts. This is especially true in game development, where
+					creativity and innovation are paramount." — Shigeru Miyamoto</em
+				>
+				<h3>Our Mission</h3>
+				<p>
+					The quote above encapsulates what we aim to do. We aim to inspire our students and teach
+					them that learning is not something to be rushed. But a lifelong pursuit that can be
+					enjoyable, and bring joy. More than anything, we want to give our students the confidence
+					to step out and make mistakes, and empower them with not only the knowledge of how to make
+					games, but why to make games.
+				</p>
+				<h3>Our Approach</h3>
+				<p>
+					We believe in learning by doing, and by understanding the why before the how. We do this
+					with:
+				</p>
+				<ul>
+					<li>interactive lessons</li>
+					<li>one-on-one mentoring</li>
+					<li>project based learning</li>
+					<li>in-depth video tutorials</li>
+				</ul>
+				<p>
+					We aim to make our teaching affordable for all. We are always willing to make
+					accommodations for those who stuggle financially.
+				</p>
+			</div>
+			<div class="image-container">
+			<img alt="about-us" src="about-us-image2.jpg"/>
 		</div>
-			<img class="image-container" alt="about-us" src="about-us-image2.jpg">
-	</div>
+		</div>
 	</section>
 </main>
 
 <style>
-	p, li {
+	p,
+	li {
 		line-height: 1.5rem;
 		font-size: 1.2rem;
 	}
@@ -118,6 +121,7 @@
 	}
 	.text-section {
 		display: flex;
+		gap: 2rem;
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 60rem;
@@ -137,10 +141,23 @@
 		display: block;
 	}
 	.image-container {
-		object-fit: cover;
-		width: 20rem;
-		filter: grayscale(100%);
-	}
+  width: 120rem;
+  height: 40rem; /* Set a fixed height or use another unit as needed */
+  background-color: var(--bg-color-banner); /* Placeholder background color */
+  position: relative; /* Important for absolute positioning */
+  overflow: hidden; /* Ensure no overflow */
+}
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-position: left;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: grayscale(100%);
+}
 	@media (max-width: 1000px) {
 		.banner-icon {
 			display: none;
