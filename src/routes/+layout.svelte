@@ -409,6 +409,7 @@
 	.social-media {
 		display: flex;
 		flex-wrap: wrap;
+		justify-content: end;
 		gap: 2rem;
 	}
 	/*!

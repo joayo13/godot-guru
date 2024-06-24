@@ -62,6 +62,53 @@
 				/>
 			</svg>
 		</div>
+		<div class="form-container">
+			<div class="contact-information-container">
+		<div>
+		<h3>Address</h3>
+		<p>
+		1234 Main St, Anytown, USA
+		</p>
+	</div>
+	<div>
+		<h3>Phone</h3>
+		<p>
+		(123) 456-7890
+		</p>
+	</div>
+	<div>
+		<h3>Email</h3>
+		<p>godotgurus@gmail.com
+		</p>
+	</div>
+		<h3>Follow Us!</h3>
+		<div class="social-media">
+			<a
+				href="https://www.facebook.com"
+				aria-label="Facebook"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="facebook-icon.png" alt="Facebook" />
+			</a>
+			<a
+				href="https://www.twitter.com"
+				aria-label="Twitter"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="twitter-icon.png" alt="Twitter" />
+			</a>
+			<a
+				href="https://www.instagram.com"
+				aria-label="Instagram"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="instagram-icon.png" alt="Instagram" />
+			</a>
+		</div>
+	</div>
 		<form on:submit={handleSubmit}>
 			<div>
 				<Textfield bind:value={valueA} label="Your Name" required style="width: 20rem;" />
@@ -90,6 +137,7 @@
 			<Button type="submit" touch variant="raised" style="width: 20rem;">send message</Button>
 			<LinearProgress {progress} {closed} />
 		</form>
+	</div>
 	</section>
 	<Snackbar bind:this={snackbarSuccess}>
 		<Label>Message Sent! We'll get back to you ASAP &lt;3</Label>
@@ -104,14 +152,13 @@
 		font-size: 4rem;
 		align-self: baseline;
 	}
+	h3 {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
 	p {
 		line-height: 1.5rem;
-		font-size: 1.2em;
-		text-align: center;
-	}
-	em {
-		line-height: 1.5rem;
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 	main {
 		padding-top: 4rem;
@@ -141,6 +188,9 @@
 		.banner-icon {
 			display: none;
 		}
+		.contact-information-container {
+			display: none !important;
+		}
 	}
 	.head-section {
 		margin-left: auto;
@@ -152,5 +202,23 @@
 		gap: 2rem;
 		padding-bottom: 2rem;
 		padding-top: 2rem;
+	}
+	.form-container {
+		display: flex;
+		flex-direction: row-reverse;
+		gap: 8rem;
+	}
+	.social-media {
+		width: 100%;
+		display: flex;
+		gap: 2rem;
+	}
+	.contact-information-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		text-align: left;
+		gap: 0.4rem;
+		margin-top: 2rem;
 	}
 </style>
