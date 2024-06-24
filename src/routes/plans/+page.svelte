@@ -175,11 +175,11 @@
 	}
 	p {
 		line-height: 1.5rem;
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 	em {
 		line-height: 1.5rem;
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 	main {
 		padding-top: 4rem;
@@ -230,12 +230,12 @@
 	}
 
 	.plan-title {
-		font-size: 1.5em;
+		font-size: 1.5rem;
 		margin-bottom: 10px;
 	}
 
 	.plan-price {
-		font-size: 1.2em;
+		font-size: 1.2rem;
 		margin-bottom: 20px;
 	}
 

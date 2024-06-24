@@ -86,13 +86,17 @@
 </main>
 
 <style>
-	p {
+	p, li {
 		line-height: 1.5rem;
 		font-size: 1.2rem;
 	}
 	h2 {
 		font-size: 4rem;
 		max-width: max-content;
+	}
+	h3 {
+		font-size: 1.5rem;
+		line-height: 1.5rem;
 	}
 	em {
 		line-height: 1.5rem;
