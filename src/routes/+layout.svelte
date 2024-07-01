@@ -266,6 +266,10 @@
 	:global(body) {
 		margin: 0px;
 	}
+	button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	}
 	.theme-switch-container {
 		position: relative;
 		width: 3rem;
