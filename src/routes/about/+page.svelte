@@ -157,7 +157,6 @@
   position: absolute;
   top: 0;
   left: 0;
-  filter: grayscale(100%);
 }
 	@media (max-width: 1000px) {
 		.banner-icon {

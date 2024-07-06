@@ -226,7 +226,10 @@
 	</nav>
 	<slot></slot>
 	<footer>
-		<p>&copy; 2024 Godot Guru. All rights reserved.</p>
+		<p>Created with ☕ by <a href="https://www.github.com/joayo13"
+			aria-label="Github Profile"
+			target="_blank"
+			rel="noopener noreferrer">joayo13</a></p>
 		<nav class="footer-nav">
 			<a href="/">Home</a>
 			<a href="/about">About</a>
