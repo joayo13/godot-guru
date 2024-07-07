@@ -54,8 +54,9 @@
 
 <main>
 	<section class="head-section">
-		<div class="banner">
-			<h2 style="margin-left: 1rem;">Plans & Pricing</h2>
+		<div class="banner-outer">
+			<div class="banner-inner">
+			<h2>Plans & Pricing</h2>
 			<svg
 				style="margin-top: 1rem;"
 				class="banner-icon"
@@ -91,6 +92,7 @@
 				/>
 			</svg>
 		</div>
+	</div>
 		<div class="text-section">
 			<em
 				>"Don&apos;t be afraid to fail. Failure is often the best path to success." - John Romero</em
@@ -171,7 +173,7 @@
 <style>
 	h2 {
 		font-size: 4rem;
-		max-width: max-content;
+		flex-grow: 1;
 	}
 	p {
 		line-height: 1.5rem;
@@ -250,20 +252,23 @@
 		margin-left: 15px;
 		list-style: disc;
 	}
-	.banner {
+	.banner-outer {
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 16rem;
 		background-color: var(--bg-color-banner);
+		overflow-x: hidden;
+	}
+	.banner-inner {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		justify-content: flex-start;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: fit-content;
 	}
 	.banner-icon {
-		display: block;
-	}
-	@media (max-width: 1000px) {
-		.banner-icon {
-			display: none;
-		}
+		flex-shrink: 0;
 	}
 </style>

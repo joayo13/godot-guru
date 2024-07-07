@@ -43,8 +43,9 @@
 
 <main>
 	<section class="head-section">
-		<div class="banner">
-			<h2 style="margin-left: 1rem;">Contact Form</h2>
+		<div class="banner-outer">
+			<div class="banner-inner">
+			<h2>Contact</h2>
 			<svg
 				style="margin-top: 1rem;"
 				class="banner-icon"
@@ -61,6 +62,7 @@
 					fill="currentColor"
 				/>
 			</svg>
+		</div>
 		</div>
 		<div class="form-container">
 			<div class="contact-information-container">
@@ -150,7 +152,7 @@
 <style>
 	h2 {
 		font-size: 4rem;
-		align-self: baseline;
+		max-width: max-content;
 	}
 	h3 {
 		font-size: 1.5rem;
@@ -174,21 +176,27 @@
 		justify-content: center;
 		align-items: center;
 	}
-	.banner {
+	.banner-outer  {
 		width: 100%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 16rem;
 		background-color: var(--bg-color-banner);
+		overflow-x: hidden;
+	}
+	.banner-inner {
+		padding-left: 1rem;
+		padding-right: 1rem;
+		display: flex;
+		gap: 2rem;
+		align-items: center;
+		justify-content: flex-start;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: fit-content;
 	}
 	.banner-icon {
+		flex-shrink: 0;
 		display: block;
 	}
 	@media (max-width: 1000px) {
-		.banner-icon {
-			display: none;
-		}
 		.contact-information-container {
 			display: none !important;
 		}
