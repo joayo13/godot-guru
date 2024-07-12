@@ -47,9 +47,9 @@
 			<div class="banner-inner">
 				<h2>Contact</h2>
 				<svg
-					style="margin-top: 3rem;"
+					style="margin-top: 2rem;"
 					class="banner-icon"
-					width="170"
+					width="120"
 					height="125"
 					viewBox="0 0 91 75"
 					fill="none"
