@@ -23,7 +23,7 @@
 		<div class="plan-title">Premium Plan</div>
 		<div class="plan-price">$200</div>
 		<ul class="plan-features">
-			<li>All benefits of previous plans.</li>
+			<li>All previous benefits.</li>
 			<li>1-on-1 mentoring</li>
 		</ul>
 	</div>
@@ -36,27 +36,30 @@
 		align-items: center;
 		gap: 1rem;
 		z-index: 1;
-		padding: 2rem;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
 		position: relative;
 	}
-	@media (max-width: 1000px) {
+	@media (max-width: 768px) {
 		.plans-container {
 			flex-direction: column;
+		}
+		.plan {
+			min-width: 100%;
 		}
 	}
 
 	.plan {
 		border-radius: 1rem;
 		background-color: var(--bg-color-nav);
-		padding: 20px;
-		margin: 10px;
+		padding: 1rem;
 		flex: 1;
-		min-width: 250px;
-		max-width: 300px;
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-		transition:
-			transform 0.3s,
-			box-shadow 0.3s;
 	}
 
 	.plan-title {

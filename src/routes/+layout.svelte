@@ -226,10 +226,14 @@
 	</nav>
 	<slot></slot>
 	<footer>
-		<p>Created with ☕ by <a href="https://www.github.com/joayo13"
-			aria-label="Github Profile"
-			target="_blank"
-			rel="noopener noreferrer">joayo13</a></p>
+		<p>
+			Created with ☕ by <a
+				href="https://www.github.com/joayo13"
+				aria-label="Github Profile"
+				target="_blank"
+				rel="noopener noreferrer">joayo13</a
+			>
+		</p>
 		<nav class="footer-nav">
 			<a href="/">Home</a>
 			<a href="/about">About</a>
@@ -270,8 +274,8 @@
 		margin: 0px;
 	}
 	button {
-    -webkit-tap-highlight-color: transparent;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-tap-highlight-color: transparent;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	}
 	.theme-switch-container {
 		position: relative;
