@@ -420,7 +420,7 @@
 	.social-media {
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: end;
+		justify-content: center;
 		gap: 2rem;
 	}
 	/*!
