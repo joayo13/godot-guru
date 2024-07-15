@@ -39,6 +39,13 @@
 	<section class="reviews">
 		<Reviews></Reviews>
 	</section>
+	<section class="pitch">
+		<h3>Advanced game development made easy.</h3>
+		<p>
+		 We believe in learning by doing, so we provide a hands-on project-based approach to learning game development. And our instructors are great at filling in the gaps for our new students. Ultimately, we all just want you to start making games in as little time as possible.
+		</p>
+		<p>Our plans are a <strong>one-time fee.</strong> You'll own all of the lessons for a lifetime so you can use us as your guide all the way from beginner to master. Our team will continue to help you throughout your journey. We're happy to say that any other game development platform can't match our dedication to our students.</p>
+	</section>
 	<section class="plans">
 		<Plans></Plans>
 		<div class="select-a-plan">
@@ -51,6 +58,15 @@
 </main>
 
 <style>
+	p {
+		line-height: 1.5rem;
+		font-size: 1.2rem;
+	}
+	h3 {
+		font-weight: 400;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
 	main {
 		overflow: hidden;
 	}
@@ -92,6 +108,11 @@
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;
+	}
+	.pitch {
+		max-width: 50rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	@keyframes rotate {
 		from {

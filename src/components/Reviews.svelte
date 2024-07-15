@@ -47,10 +47,9 @@
 			/>
 		</div>
 		<i>
-			"This platform is a game-changer! The lessons are well-structured and easy to follow, making
+			"This platform has been great for me. The lessons are well-structured and easy to follow, making
 			complex game development concepts accessible even for beginners. The instructors are
-			knowledgeable and always willing to help. I've already created my first game, and I couldn't
-			be more thrilled!" <b class="jordant">&nbsp; - Jordan T.</b>
+			knowledgeable and always willing to help. I've already created my first game!" <b class="jordant">&nbsp;- Jordan T.</b>
 		</i>
 	</div>
 </div>
@@ -64,6 +63,10 @@
 	@media (max-width: 768px) {
 		.review-card {
 			flex-direction: column;
+		}
+		.jordant {
+			display: block;
+			line-height: 2rem;
 		}
 	}
 	.jordant {
