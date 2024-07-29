@@ -82,9 +82,6 @@
 					accommodations for those who stuggle financially.
 				</p>
 			</div>
-			<div class="image-container">
-				<img alt="about-us" src="about-us-image2.jpg" />
-			</div>
 		</div>
 	</section>
 </main>
