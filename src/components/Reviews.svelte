@@ -58,7 +58,6 @@
 		flex-direction: column;
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 50rem;
 		line-height: 1.5rem;
 	}
 	.review-card {
@@ -84,13 +83,5 @@
 		height: 6rem;
 		background-color: var(--bg-color-banner);
 		filter: blur(5px);
-	}
-	@keyframes rotate {
-		from {
-			transform: rotate(0deg);
-		}
-		to {
-			transform: rotate(360deg);
-		}
 	}
 </style>

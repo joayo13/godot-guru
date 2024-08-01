@@ -17,7 +17,7 @@
 
 <main class="main">
 	<section class="intro">
-		<h2>Go from beginner to master.</h2>
+		<h2>Go from <strong class="beginner">beginner</strong> to <strong class="master">master</strong>.</h2>
 		<svg
 			class="logo-svg"
 			width="197"
@@ -99,7 +99,6 @@
 	.intro {
 		padding-top: 4rem;
 		position: relative;
-		overflow: hidden;
 	}
 	@media (max-width: 1600px) {
 		.logo-svg {
@@ -134,6 +133,7 @@
 	}
 	h2 {
 		font-size: 4rem;
+		margin-bottom: 0rem;
 	}
 	.main {
 		font-family: 'Montserrat', sans-serif;
@@ -145,6 +145,12 @@
 		max-width: 50rem;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	.beginner {
+		color: rgb(34, 248, 34);
+	}
+	.master {
+		color: rgb(248, 34, 34);
 	}
 	@keyframes rotate {
 		from {
