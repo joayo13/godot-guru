@@ -17,7 +17,7 @@
 
 <main class="main">
 	<section class="intro">
-		<h2>Go from <strong class="beginner">beginner</strong> to <strong class="master">master</strong>.</h2>
+		<h2>Go from beginner to master.</h2>
 		<svg
 			class="logo-svg"
 			width="197"
@@ -145,12 +145,6 @@
 		max-width: 50rem;
 		margin-left: auto;
 		margin-right: auto;
-	}
-	.beginner {
-		color: rgb(34, 248, 34);
-	}
-	.master {
-		color: rgb(248, 34, 34);
 	}
 	@keyframes rotate {
 		from {
