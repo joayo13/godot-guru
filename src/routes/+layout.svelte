@@ -338,13 +338,14 @@
 		height: 1px;
 		background-color: var(--text-color);
 		width: 100%;
-		margin-bottom: 1rem;
+		margin-top: 1rem;
+		margin-bottom: 2rem;
 	}
 
 	.main-nav-mobile a {
 		display: block;
 		color: var(--text-color);
-		text-decoration: none;
+		text-decoration: underline;
 		padding-top: 1rem;
 		padding-bottom: 1rem;
 	}
