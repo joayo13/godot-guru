@@ -30,6 +30,7 @@
 		font-size: 1.2rem;
 	}
 	h2 {
+		margin-left: 1rem;
 		font-size: 4rem;
 		max-width: max-content;
 	}

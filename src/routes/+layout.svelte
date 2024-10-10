@@ -322,7 +322,7 @@
 	.main-nav-mobile {
 		padding: 1rem;
 		margin-top: 5rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		position: fixed;
 		top: 0;
 		right: 0;
@@ -349,7 +349,7 @@
 		padding-bottom: 1rem;
 	}
 	.navbar-mobile {
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-nav);
 		position: fixed;
 		top: 0;
@@ -366,7 +366,7 @@
 	}
 
 	.navbar-desktop {
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-nav);
 		position: fixed;
 		top: 0;
@@ -399,7 +399,7 @@
 	footer {
 		position: relative;
 		padding: 2rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		height: 15rem;
 		background-color: var(--bg-color-nav);
 		color: var(--text-color);

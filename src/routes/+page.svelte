@@ -1,6 +1,5 @@
 <script>
 	import Button, { Label, Icon } from '@smui/button';
-	import Reviews from '../components/Reviews.svelte';
 	import { onMount } from 'svelte';
 	import Plans from '../components/Plans.svelte';
 	let is_mobile = false;
@@ -54,16 +53,13 @@
 			/>
 		</svg>
 	<section class="pitch">
-		<h3>Advanced game development made easy.</h3>
+		<h3>Advanced Game Development made easy.</h3>
 		<p>
 			We believe that the best way to learn game development is through a hands-on, project-based approach. Our curriculum is designed to immerse you in the actual process of game creation from the very start. Rather than focusing solely on theoretical concepts, we emphasize practical experience, allowing you to apply what you learn in real-world projects. This approach ensures that you not only understand the fundamentals of game development but also gain valuable experience in building games that you can show to potential employers or use in your portfolio.
 		</p>
 		<p>
 			Ultimately, our goal is to empower you to start making your own games as quickly as possible. By the end of your journey with us, you'll be equipped with the skills, knowledge, and confidence to continue developing games independently and pursue your passion with a solid foundation.
 		</p>
-		<section class="reviews">
-			<Reviews></Reviews>
-		</section>
 		<p>Our plans are a <strong>one-time fee.</strong> You'll own all of the lessons for a lifetime so you can use us as your guide all the way from beginner to master. Our team will continue to help you throughout your journey. We're happy to say that any other game development platform can't match our dedication to our students.</p>
 	</section>
 	<section class="plans">
@@ -78,14 +74,21 @@
 </main>
 
 <style>
+	section {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
 	p {
 		line-height: 1.5rem;
 		font-size: 1.2rem;
 	}
 	h3 {
-		font-weight: 400;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
 		font-size: 1.5rem;
-		line-height: 2rem;
+	}
+	h2 {
+		font-family: 'Montserrat', sans-serif;
 	}
 	main {
 		overflow: hidden;
@@ -107,10 +110,6 @@
 		.logo-svg2 {
 			display: none;
 		}
-		section {
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
 	}
 	.logo-svg {
 		position: absolute;
@@ -136,7 +135,7 @@
 		margin-bottom: 0rem;
 	}
 	.main {
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;

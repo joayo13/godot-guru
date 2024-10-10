@@ -149,27 +149,4 @@
 		flex-shrink: 0;
 		display: block;
 	}
-	.image-container {
-		border-radius: 1rem;
-		width: 140rem;
-		height: 40rem; /* Set a fixed height or use another unit as needed */
-		background-color: var(--bg-color-banner); /* Placeholder background color */
-		position: relative; /* Important for absolute positioning */
-		overflow: hidden; /* Ensure no overflow */
-	}
-	.image-container img {
-		width: 100%;
-		height: 100%;
-		object-position: left;
-		object-fit: cover;
-		display: block;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
-	@media (max-width: 1000px) {
-		.image-container {
-			display: none;
-		}
-	}
 </style>
