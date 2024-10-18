@@ -89,8 +89,14 @@
 	}
 	h2 {
 		font-family: 'Montserrat', sans-serif;
+		font-size: 4rem;
+		margin-bottom: 0rem;
 	}
-	main {
+	.main {
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		background-color: var(--bg-color-page);
+		color: var(--text-color);
+		width: 100%;
 		overflow: hidden;
 	}
 	.select-a-plan {
@@ -129,16 +135,6 @@
 		height: 40rem;
 		width: 40rem;
 		animation: rotate 60s linear infinite;
-	}
-	h2 {
-		font-size: 4rem;
-		margin-bottom: 0rem;
-	}
-	.main {
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		background-color: var(--bg-color-page);
-		color: var(--text-color);
-		width: 100%;
 	}
 	.pitch {
 		max-width: 50rem;

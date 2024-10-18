@@ -148,9 +148,9 @@
 		max-width: max-content;
 	}
 	h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
 		font-size: 1.5rem;
-		line-height: 1.5rem;
-		font-weight: 400;
 	}
 	p {
 		line-height: 1.5rem;
@@ -158,7 +158,7 @@
 	}
 	main {
 		padding-top: 4rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;
@@ -170,6 +170,7 @@
 		align-items: center;
 	}
 	.banner-outer {
+		min-height: 12rem;
 		width: 100%;
 		background-color: var(--bg-color-banner);
 		overflow-x: hidden;
@@ -220,7 +221,6 @@
 		flex-direction: column;
 		justify-content: start;
 		text-align: left;
-		gap: 0.5rem;
 		margin-top: 2rem;
 	}
 </style>

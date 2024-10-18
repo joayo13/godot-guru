@@ -94,10 +94,9 @@
 			</div>
 		</div>
 		<div class="text-section">
-			<em
-				>"Don&apos;t be afraid to fail. Failure is often the best path to success." - John Romero</em
+			<p
+				>"Don&apos;t be afraid to fail. Failure is often the best path to success." - John Romero</p
 			>
-			<p>With our plans it's a one-time-fee, and you'll own it for a lifetime.</p>
 			<div class="plans-container">
 				<div class="plan">
 					<div class="plan-title">Basic Plan</div>
@@ -151,8 +150,8 @@
 						<li>
 							1-on-1 mentoring
 							<ul style="margin-top: 0.5rem;">
-								<li>Career Advice For Developers</li>
-								<li>Code Reviews for GDScript</li>
+								<li>Career Advice</li>
+								<li>Code Reviews</li>
 								<li>Design Advice</li>
 								<li>Pair Programming</li>
 								<li>Troubleshooting</li>
@@ -179,13 +178,9 @@
 		line-height: 1.5rem;
 		font-size: 1.2rem;
 	}
-	em {
-		line-height: 1.5rem;
-		font-size: 1.2rem;
-	}
 	main {
 		padding-top: 4rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;
@@ -195,7 +190,7 @@
 		margin-right: auto;
 	}
 	.text-section {
-		max-width: 60rem;
+		max-width: 50rem;
 		padding-top: 2rem;
 		padding-left: 1rem;
 		padding-right: 1rem;
@@ -253,6 +248,7 @@
 		list-style: disc;
 	}
 	.banner-outer {
+		min-height: 12rem;
 		width: 100%;
 		background-color: var(--bg-color-banner);
 		overflow-x: hidden;

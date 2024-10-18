@@ -23,7 +23,7 @@
 <style>
 	h2 {
 		margin-left: 1rem;
-		font-size: 4rem;
+		font-size: 3rem;
 		max-width: max-content;
 	}
 	em {

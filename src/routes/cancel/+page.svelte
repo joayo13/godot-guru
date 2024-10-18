@@ -8,9 +8,9 @@
 			<h2>Transaction Cancelled</h2>
 		</div>
 		<div class="text-section">
-			<em
+			<p
 				>"Never give up on something that you can’t go a day without thinking about." - Winston
-				Churchill</em
+				Churchill</p
 			>
 			<p>
 				Your transaction has been cancelled. While we understand your decision, we hope that you
@@ -30,17 +30,14 @@
 		font-size: 1.2rem;
 	}
 	h2 {
-		margin-left: 1rem;
-		font-size: 4rem;
-		max-width: max-content;
-	}
-	em {
-		line-height: 1.5rem;
-		font-size: 1.2rem;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 3rem;
+		
+		padding-left: 1rem;
 	}
 	main {
 		padding-top: 4rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;

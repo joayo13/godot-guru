@@ -6,8 +6,8 @@
 				<svg
 					style="margin-top: 1rem;"
 					class="banner-icon"
-					width="192"
-					height="150"
+					width="200"
+					height="140"
 					viewBox="0 0 96 86"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -53,10 +53,10 @@
 		</div>
 		<div class="text-section">
 			<div>
-				<em
+				<p
 					>"Education is not just about teaching people facts; it's about inspiring them to see the
 					possibilities beyond those facts. This is especially true in game development, where
-					creativity and innovation are paramount." — Shigeru Miyamoto</em
+					creativity and innovation are paramount." — Shigeru Miyamoto</p
 				>
 				<h3>Our Mission</h3>
 				<p>
@@ -92,22 +92,19 @@
 		line-height: 1.5rem;
 		font-size: 1.2rem;
 	}
-	h2 {
-		font-size: 4rem;
-		max-width: max-content;
-	}
+	
 	h3 {
-		font-weight: 400;
+		font-family: 'Montserrat', sans-serif;
+		font-weight: 800;
 		font-size: 1.5rem;
-		line-height: 1.5rem;
 	}
-	em {
-		line-height: 1.5rem;
-		font-size: 1.2rem;
+	h2 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 4rem;
 	}
 	main {
 		padding-top: 4rem;
-		font-family: 'Montserrat', sans-serif;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		background-color: var(--bg-color-page);
 		color: var(--text-color);
 		width: 100%;
@@ -125,18 +122,18 @@
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 60rem;
-		padding-top: 2rem;
+		padding-top: 1rem;
 		padding-left: 1rem;
 		padding-right: 1rem;
 	}
 	.banner-outer {
 		overflow-x: hidden;
 		width: 100%;
+		min-height: 12rem;
 		background-color: var(--bg-color-banner);
 	}
 	.banner-inner {
 		padding-left: 1rem;
-		padding-right: 1rem;
 		display: flex;
 		gap: 2rem;
 		align-items: center;
