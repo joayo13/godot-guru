@@ -3,11 +3,24 @@
 	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 	import '../app.css';
+	import { onNavigate } from '$app/navigation';
 	let is_mobile = false;
 	let menu_open = false;
 	let nav_visible = true;
 	let prev_scrollY: number;
 	let isThemeSwitchDark = false;
+	
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 
 	function setThemeOnLoad() {
 		const storedTheme = sessionStorage.getItem('theme');
@@ -273,6 +286,7 @@
 	:global(body) {
 		margin: 0px;
 	}
+	
 	button {
 		-webkit-tap-highlight-color: transparent;
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
