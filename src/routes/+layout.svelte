@@ -96,28 +96,7 @@
 
 <main>
 	<nav>
-		{#if is_mobile && nav_visible}
-			<div
-				class="navbar-mobile"
-				role="navigation"
-				transition:slide={{ delay: 100, duration: 300, easing: quintOut, axis: 'y' }}
-			>
-				<a href="/" class="logo-container">
-					<img class="logo-image" src="logo-godot-guru.png" alt="logo" />
-					<strong>GODOT GURU</strong>
-				</a>
-				<button
-					class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
-					on:click={toggleMenu}
-					aria-expanded={menu_open}
-					aria-controls="mobile-menu"
-				>
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
-		{:else if !is_mobile && nav_visible}
+		
 			<div
 				role="navigation"
 				aria-label="Main Navigation"
@@ -129,7 +108,7 @@
 					<strong>GODOT GURU</strong>
 				</a>
 				<div style="flex-grow: 1;"></div>
-				<div>
+				<div class="navbar-links">
 					<a href="/about">About</a>
 					<a href="/contact">Contact</a>
 					<a href="/plans">Plans & Pricing</a>
@@ -174,8 +153,17 @@
 						{/if}
 					</span>
 				</button>
+				<button
+					class={`hamburger hamburger--collapse ${menu_open ? 'is-active' : ''}`}
+					on:click={toggleMenu}
+					aria-expanded={menu_open}
+					aria-controls="mobile-menu"
+				>
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</button>
 			</div>
-		{/if}
 		{#if menu_open}
 			<div
 				class="overlay"
@@ -197,7 +185,7 @@
 				<button
 					aria-label={isThemeSwitchDark ? 'Switch to light mode' : 'Switch to dark mode'}
 					aria-pressed={isThemeSwitchDark}
-					class="theme-switch-container"
+					class="theme-switch-container-mobile"
 					on:click={toggleTheme}
 				>
 					<span class={`theme-switch-knob ${isThemeSwitchDark ? 'theme-switch-dark' : ''} `}>
@@ -292,6 +280,18 @@
 		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	}
 	.theme-switch-container {
+		display: block;
+		position: relative;
+		width: 3rem;
+		height: 1.5rem;
+		border-radius: 1rem;
+		border: 1px solid var(--text-color);
+		background-color: transparent;
+		opacity: 0.6;
+		cursor: pointer;
+	}
+	.theme-switch-container-mobile {
+		display: block;
 		position: relative;
 		width: 3rem;
 		height: 1.5rem;
@@ -396,6 +396,21 @@
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 		z-index: 1;
 	}
+	@media screen and (max-width: 1100px) {
+		.navbar-links {
+			display: none !important;
+		}
+		.hamburger {
+			display: inline-block !important;
+		}
+		.theme-switch-container {
+			display: none;
+		}
+	}
+	.navbar-links {
+		display: block;
+	}
+	
 	.navbar-desktop a {
 		color: var(--text-color);
 		padding: 1rem;
@@ -447,7 +462,7 @@
  */
 	.hamburger {
 		padding: 15px 15px;
-		display: inline-block;
+		display: none;
 		cursor: pointer;
 		transition-property: opacity, filter;
 		transition-duration: 0.15s;
